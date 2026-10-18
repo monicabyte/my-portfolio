@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #243b55, #141e30);
+            color: white;
+            text-align: center;
+            padding: 65px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #141e30;
+            padding: 16px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #66d9ef;
+        }
+
+        section {
+            background-color: white;
+            max-width: 850px;
+            margin: 25px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        h2 {
+            color: #243b55;
+            margin-bottom: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background-color: #e7eef8;
+            color: #243b55;
+            padding: 8px 14px;
+            border-radius: 20px;
+        }
+
+        .project {
+            border-left: 4px solid #243b55;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #243b55;
+            color: white;
+            padding: 11px 20px;
+            margin-top: 12px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #1769aa;
+        }
+
+        footer {
+            background-color: #141e30;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            section {
+                margin: 16px;
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hi, I'm an Aspiring Developer</h1>
+        <p>B.Sc. Mathematics with Computer Applications Student</p>
+        <p>Interested in Java and Software Development</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a B.Sc. Mathematics with Computer Applications student
+            interested in programming and software development.
+            I enjoy learning new technologies and building projects
+            to improve my coding skills.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skills">
+            <span class="skill">Java Basics</span>
+            <span class="skill">Python</span>
+            <span class="skill">Problem Solving</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">HTML & CSS</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="project">
+            <h3>Java Practice Projects</h3>
+            <p>
+                Beginner Java programs covering variables,
+                operators, conditions, loops and calculations.
+            </p>
+
+            <a class="btn"
+               href="https://github.com/monicabyte/java-practice"
+               target="_blank" rel="noopener noreferrer">
+                View Java Projects
+            </a>
+        </div>
+
+        <div class="project">
+            <h3>Heart Disease Prediction</h3>
+            <p>
+                A machine learning project using a Random Forest
+                Classifier to predict heart disease from dataset features.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Connect with me through my profiles.</p>
+
+        <a class="btn"
+           href="https://github.com/monicabyte"
+           target="_blank" rel="noopener noreferrer">
+            GitHub Profile
+        </a>
+
+        <a class="btn"
+           href="https://www.linkedin.com/in/monica-subramani-6423a53b2"
+           target="_blank" rel="noopener noreferrer">
+            LinkedIn Profile
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 My Portfolio</p>
+        <p>Designed by an Aspiring Developer</p>
+    </footer>
+
+</body>
+</html>
