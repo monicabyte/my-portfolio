@@ -1,129 +1,261 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio</title>
+    <title>Monica S. | Software Developer Portfolio</title>
+    <meta name="description" content="Monica S. - B.Sc. Mathematics with Computer Applications student and aspiring software developer. Explore my skills, projects and training.">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6fb;
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0b1120;
+            color: #e2e8f0;
+            line-height: 1.7;
+        }
+
+        :root {
+            --blue: #38bdf8;
+            --card: #151f32;
+            --muted: #94a3b8;
         }
 
         header {
-            background: linear-gradient(135deg, #243b55, #141e30);
-            color: white;
-            text-align: center;
-            padding: 65px 20px;
+            background: #0f172a;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #25334a;
         }
 
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 17px;
-        }
-
-        nav {
-            background-color: #141e30;
-            padding: 16px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
+        .logo {
+            color: var(--blue);
+            font-size: 23px;
             font-weight: bold;
         }
 
-        nav a:hover {
-            color: #66d9ef;
-        }
-
-        section {
-            background-color: white;
-            max-width: 850px;
-            margin: 25px auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-        }
-
-        h2 {
-            color: #243b55;
-            margin-bottom: 15px;
-        }
-
-        .skills {
+        nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 22px;
         }
 
-        .skill {
-            background-color: #e7eef8;
-            color: #243b55;
-            padding: 8px 14px;
-            border-radius: 20px;
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
-        .project {
-            border-left: 4px solid #243b55;
-            padding-left: 15px;
-            margin: 20px 0;
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .hero {
+            min-height: 470px;
+            padding: 110px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(120deg, #0f172a, #14243b);
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 55px);
+            color: white;
+            margin: 12px 0;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .tagline {
+            color: var(--blue);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: var(--muted);
+            margin: 12px 0;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
         }
 
         .btn {
             display: inline-block;
-            background-color: #243b55;
-            color: white;
-            padding: 11px 20px;
-            margin-top: 12px;
+            padding: 11px 23px;
             border-radius: 7px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: var(--blue);
+            color: #0b1120;
+        }
+
+        .secondary {
+            border: 1px solid var(--blue);
+            color: var(--blue);
         }
 
         .btn:hover {
-            background-color: #1769aa;
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        section {
+            padding: 75px 10%;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: var(--blue);
+        }
+
+        .underline {
+            width: 55px;
+            height: 3px;
+            background: var(--blue);
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: var(--muted);
+        }
+
+        .details {
+            margin-top: 22px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+        }
+
+        .detail {
+            background: var(--card);
+            padding: 18px;
+            border-radius: 9px;
+            border: 1px solid #27364d;
+        }
+
+        .detail strong {
+            color: var(--blue);
+        }
+
+        .skills-grid, .projects-grid, .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card, .project-card, .training-card {
+            background: var(--card);
+            padding: 23px;
+            border-radius: 10px;
+            border: 1px solid #27364d;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover, .project-card:hover,
+        .training-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3, .project-card h3,
+        .training-card h3 {
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .skill-card p, .project-card p,
+        .training-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .project-card .btn {
+            margin-top: 18px;
+            font-size: 13px;
+        }
+
+        .education-card {
+            background: var(--card);
+            padding: 25px;
+            border-left: 3px solid var(--blue);
+            border-radius: 8px;
+        }
+
+        .education-card h3 {
+            color: white;
+        }
+
+        .education-card p {
+            color: var(--muted);
+        }
+
+        .contact-text {
+            color: var(--muted);
+            margin-bottom: 20px;
         }
 
         footer {
-            background-color: #141e30;
-            color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 35px;
+            padding: 25px;
+            background: #0f172a;
+            color: var(--muted);
+            border-top: 1px solid #25334a;
+            font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 28px;
+        @media(max-width: 650px) {
+            header {
+                justify-content: center;
             }
 
-            nav a {
-                display: inline-block;
-                margin: 5px 8px;
+            nav {
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .hero {
+                padding: 75px 7%;
             }
 
             section {
-                margin: 16px;
-                padding: 22px;
+                padding: 55px 7%;
+            }
+
+            .section-title {
+                font-size: 26px;
             }
         }
     </style>
@@ -131,87 +263,255 @@
 
 <body>
 
+    <!-- Navigation -->
     <header>
-        <h1>Hi, I'm an Aspiring Developer</h1>
-        <p>B.Sc. Mathematics with Computer Applications Student</p>
-        <p>Interested in Java and Software Development</p>
+        <div class="logo">Monica S.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#training">Training</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <!-- Home -->
+    <div class="hero" id="home">
+        <p class="tagline">HELLO, WELCOME TO MY PORTFOLIO</p>
 
-    <section id="about">
-        <h2>About Me</h2>
+        <h1>Hi, I'm <span>Monica S.</span></h1>
+
+        <h2>Aspiring Software Developer</h2>
+
         <p>
-            I am a B.Sc. Mathematics with Computer Applications student
-            interested in programming and software development.
-            I enjoy learning new technologies and building projects
-            to improve my coding skills.
+            B.Sc. Mathematics with Computer Applications student
+            passionate about programming, technology and
+            software development. Always eager to learn
+            and build meaningful projects.
         </p>
-    </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
+        <div class="buttons">
+            <a href="#projects" class="btn primary">
+                Explore My Projects
+            </a>
 
-        <div class="skills">
-            <span class="skill">Java Basics</span>
-            <span class="skill">Python</span>
-            <span class="skill">Problem Solving</span>
-            <span class="skill">GitHub</span>
-            <span class="skill">HTML & CSS</span>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-
-        <div class="project">
-            <h3>Java Practice Projects</h3>
-            <p>
-                Beginner Java programs covering variables,
-                operators, conditions, loops and calculations.
-            </p>
-
-            <a class="btn"
-               href="https://github.com/monicabyte/java-practice"
-               target="_blank" rel="noopener noreferrer">
-                View Java Projects
+            <a href="#contact" class="btn secondary">
+                Contact Me
             </a>
         </div>
+    </div>
 
-        <div class="project">
-            <h3>Heart Disease Prediction</h3>
-            <p>
-                A machine learning project using a Random Forest
-                Classifier to predict heart disease from dataset features.
-            </p>
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="underline"></div>
+
+        <p class="about-text">
+            I am a B.Sc. Mathematics with Computer Applications
+            student at Dwaraka Doss Goverdhan Doss Vaishnav College,
+            with a strong interest in software development.
+
+            I have been developing my technical skills through
+            Java programming, Python and hands-on projects.
+
+            I enjoy solving problems, exploring new technologies
+            and continuously improving my programming knowledge.
+            I am looking forward to beginning my professional
+            journey in the IT industry.
+        </p>
+
+        <div class="details">
+            <div class="detail">
+                <strong>Career Interest</strong>
+                <p>Software Development</p>
+            </div>
+
+            <div class="detail">
+                <strong>Education</strong>
+                <p>B.Sc. Mathematics with Computer Applications</p>
+            </div>
+
+            <div class="detail">
+                <strong>Location</strong>
+                <p>Chennai, Tamil Nadu</p>
+            </div>
+
+            <div class="detail">
+                <strong>Career Level</strong>
+                <p>Fresher</p>
+            </div>
         </div>
     </section>
 
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <div class="underline"></div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Core Java fundamentals and programming practice.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Python programming and data science fundamentals.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Building and styling responsive web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Power BI</h3>
+                <p>Fundamentals of data visualization.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>GitHub</h3>
+                <p>Code management and project hosting.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Logical thinking and analytical skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+        <div class="underline"></div>
+
+        <div class="education-card">
+            <h3>B.Sc. Mathematics with Computer Applications</h3>
+            <p>Dwaraka Doss Goverdhan Doss Vaishnav College</p>
+            <p>Arumbakkam, Chennai</p>
+            <p>Currently pursuing - Third Year</p>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="underline"></div>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>Heart Disease Prediction</h3>
+
+                <p>
+                    A machine learning project developed using
+                    Python and the Random Forest Classifier to
+                    predict heart disease based on dataset features.
+                </p>
+
+                <p><strong>Model Accuracy: 87.5%</strong></p>
+
+            </div>
+
+            <div class="project-card">
+                <h3>Java Practice Projects</h3>
+
+                <p>
+                    A collection of beginner-level Java programs
+                    covering variables, operators, conditional
+                    statements, loops and basic calculations.
+                </p>
+
+                <a class="btn secondary"
+                   href="https://github.com/monicabyte/java-practice"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View Project
+                </a>
+            </div>
+
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A responsive personal portfolio website
+                    developed using HTML and CSS to showcase
+                    my technical skills, education and projects.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Training -->
+    <section id="training">
+        <h2 class="section-title">Training & <span>Certifications</span></h2>
+        <div class="underline"></div>
+
+        <div class="training-grid">
+
+            <div class="training-card">
+                <h3>Java Programming</h3>
+                <p>Core Essential Bootcamp</p>
+            </div>
+
+            <div class="training-card">
+                <h3>Data Science with Python</h3>
+                <p>Training Program - Enbott Technologies</p>
+            </div>
+
+            <div class="training-card">
+                <h3>Power BI Workshop</h3>
+                <p>Power BI Workshop Training</p>
+            </div>
+
+            <div class="training-card">
+                <h3>Intel Unnati</h3>
+                <p>
+                    Data Centric Labs, Crescent Innovation
+                    and Incubation Council.
+                    <br>
+                    1 June - 15 June
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Connect with me through my profiles.</p>
+        <h2 class="section-title">Let's <span>Connect</span></h2>
+        <div class="underline"></div>
 
-        <a class="btn"
-           href="https://github.com/monicabyte"
-           target="_blank" rel="noopener noreferrer">
-            GitHub Profile
-        </a>
+        <p class="contact-text">
+            Thank you for visiting my portfolio.
+            Feel free to explore my profiles and projects.
+        </p>
 
-        <a class="btn"
-           href="https://www.linkedin.com/in/monica-subramani-6423a53b2"
-           target="_blank" rel="noopener noreferrer">
-            LinkedIn Profile
-        </a>
+        <div class="buttons">
+            <a class="btn primary"
+               href="https://github.com/monicabyte"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a class="btn secondary"
+               href="https://www.linkedin.com/in/monica-subramani-6423a53b2"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 My Portfolio</p>
-        <p>Designed by an Aspiring Developer</p>
+        <p>© 2026 Monica S. | Software Developer Portfolio</p>
+        <p>Designed and developed by Monica S.</p>
     </footer>
 
 </body>
